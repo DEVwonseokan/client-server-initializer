@@ -35,19 +35,17 @@ public class FixedMessageUtils {
     }
 
     private static int getMsgLength(byte[] message, int lengthPartSize, boolean isInclude) {
-        int msgLength = message.length;
         if (isInclude) {
-            msgLength += lengthPartSize;
+            return message.length + lengthPartSize;
         }
-        return msgLength;
+        return message.length;
     }
 
     private static int getMsgWithLengthPartSize(byte[] message, int lengthPartSize, boolean isAppend) {
         if (isAppend) {
             return message.length + lengthPartSize;
-        } else {
-            return message.length;
         }
+        return message.length;
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
