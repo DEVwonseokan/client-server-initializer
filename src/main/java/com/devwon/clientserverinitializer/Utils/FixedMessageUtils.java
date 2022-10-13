@@ -46,7 +46,7 @@ public class FixedMessageUtils {
             return message.length + lengthPartSize;
         }
         return message.length;
-    } //
+    }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         byte[] msg = "helloWorld".getBytes();
