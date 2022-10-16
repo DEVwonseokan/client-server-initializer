@@ -1,22 +1,18 @@
 package com.devwon.clientserverinitializer.domain.telegram;
 
+import lombok.Data;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import static com.devwon.clientserverinitializer.Utils.StringUtils.padLeft;
 
-@Getter
-@Setter
+@Data
+@RequiredArgsConstructor
 public class FixedTelegram extends Telegram<byte[]> {
     private byte[] lengthPart;
     private int lengthPartSize;
     private boolean isIncludeLengthPart;
-
-    public FixedTelegram(byte[] tgrmData, int lengthPartSize, boolean isIncludeLengthPart) {
-        this.tgrmData = tgrmData;
-        this.lengthPartSize = lengthPartSize;
-        this.isIncludeLengthPart = isIncludeLengthPart;
-    }
 
     public byte[] getLengthPart(){
         if(isIncludeLengthPart){
