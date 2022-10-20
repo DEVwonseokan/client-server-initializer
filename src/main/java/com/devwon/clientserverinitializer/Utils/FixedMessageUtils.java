@@ -32,7 +32,7 @@ public class FixedMessageUtils {
             System.arraycopy(lengthPart,0,msgWithLengthPart,lengthPartOffset,lengthPartSize);
         }
         return msgWithLengthPart;
-    }
+    }  //
     private static int getMsgLength(byte[] message, int lengthPartSize, boolean isInclude) {
         if (isInclude) {
             return message.length + lengthPartSize;
